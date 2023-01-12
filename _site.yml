@@ -1,0 +1,16 @@
+name: "통계 보고서 자동화"
+title: "통계 보고서 자동화"
+description: |
+  My Website
+output_dir: "docs"
+navbar:
+  right:
+    - text: "기업을 위한 분석 Reporting System 고찰"
+      href: index.html
+    - text: "간단한 분석보고서 데모"
+      href: create_report.html
+output:
+  distill::distill_article:
+    theme: theme.css
+    includes:
+      after_body: footer.html
