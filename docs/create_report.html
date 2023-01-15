@@ -2573,17 +2573,121 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <nav class="l-text toc figcaption" id="TOC">
 <h3>Contents</h3>
 <ul>
-<li><a href="#데모-내역" id="toc-데모-내역">데모 내역</a></li>
+<li><a href="#bitreport-패키지-소개" id="toc-bitreport-패키지-소개">bitReport 패키지 소개</a>
+<ul>
+<li><a href="#bitreport-패키지란" id="toc-bitreport-패키지란">bitReport 패키지란</a></li>
+<li><a href="#bitreport-패키지의-기능과-특징" id="toc-bitreport-패키지의-기능과-특징">bitReport 패키지의 기능과 특징</a></li>
+</ul></li>
+<li><a href="#bitreport를-이용한-정적-보고서-생성-데모" id="toc-bitreport를-이용한-정적-보고서-생성-데모">bitReport를 이용한 정적 보고서 생성 데모</a>
+<ul>
+<li><a href="#시나리오" id="toc-시나리오">시나리오</a></li>
+<li><a href="#bitreport-기반의-보고서" id="toc-bitreport-기반의-보고서">bitReport 기반의 보고서</a></li>
+<li><a href="#bitreport-기반의-보고서-생성-시연" id="toc-bitreport-기반의-보고서-생성-시연">bitReport 기반의 보고서 생성 시연</a></li>
+</ul></li>
 </ul>
 </nav>
 </div>
-<h2 id="데모-내역">데모 내역</h2>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="img/hlireport.png" width="55%" style="display: block; margin: auto;" /></p>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="preface">
+<h4>들어가기</h4>
+훌륭한 목수는 연장을 탓하지는 않습니다.
+<br/>
+그러나 디지털 글쓰기 기반의 훌륭한 연장은 분석가의 잔업과 야근을 줄여줄 수 있습니다.
+<br/>
+한국R사용자회의 hliReport 패키지가 분석가의 보고서 작업에 훌륭한 연장이 되기를 바랍니다.
+</div>
+</div>
+<p><br></p>
+<h2 id="bitreport-패키지-소개">bitReport 패키지 소개</h2>
+<h3 id="bitreport-패키지란">bitReport 패키지란</h3>
 <ul>
-<li>bitReport 기반의 보고서 자동화 응용사례 소개</li>
-<li>bitReport 기반의 보고서 생성 시연
+<li><a href="https://github.com/bit2r/bitReport">bitReport</a> 패키지는 <strong>Reproducible Research</strong> 기반으로 보고서를 생성할 수 있도록 도와주는 R 패키지</li>
+</ul>
+<h3 id="bitreport-패키지의-기능과-특징">bitReport 패키지의 기능과 특징</h3>
+<h4 id="패키지의-기능">패키지의 기능</h4>
 <ul>
-<li>정적 리포트에 한정</li>
+<li>정적 리포트 작성
+<ul>
+<li>세로방향 PDF 페이지 문서 생성</li>
 </ul></li>
+<li>동적 리포트 작성
+<ul>
+<li>웹 페이지 생성</li>
+<li>웹 대시보드 생성</li>
+<li>웹 슬라이드 문서 생성</li>
+</ul></li>
+</ul>
+<h4 id="패키지의-특징">패키지의 특징</h4>
+<ul>
+<li>보고서 템플리트 제공
+<ul>
+<li>RStudio의 메뉴로 제공</li>
+<li>제공하는 템플리트를 수정해서 보고서 생성</li>
+</ul></li>
+<li>시각화 및 도표 출력 템플리트 함수 제공
+<ul>
+<li>템플리트 자체가 사용방법 설명서</li>
+<li>템플리트 함수를 이용하거나 수정해서 보고서에 삽입할 통계표나 플롯 출력</li>
+</ul></li>
+<li>한글 폰트 포함
+<ul>
+<li>NanumSquare, D2Coding 폰트</li>
+</ul></li>
+<li>웹 페이지를 스크린샷 할수 있는 프로그램 포함
+<ul>
+<li>webshot 패키지를 이용한 스크린 샷</li>
+</ul></li>
+</ul>
+<h2 id="bitreport를-이용한-정적-보고서-생성-데모">bitReport를 이용한 정적 보고서 생성 데모</h2>
+<h3 id="시나리오">시나리오</h3>
+<ul>
+<li>테마
+<ul>
+<li>블루 테마</li>
+</ul></li>
+<li>커버 페이지
+<ul>
+<li>제목: 서울시 인구통계</li>
+<li>부제목: 사용 예시를 위한</li>
+<li>로고: DPLANEX 로고</li>
+<li>커버 이미지: 광화문</li>
+</ul></li>
+<li>교보문고
+<ul>
+<li>베스트셀러 현황</li>
+<li>집계표와 내용 설명을 위한 조판</li>
+</ul></li>
+<li>서식 및 조판 예제
+<ul>
+<li>차트를 포함한 테이블</li>
+<li>Information Visualization</li>
+<li>데이터 시각화 및 집계 테이블</li>
+</ul></li>
+<li>서울시 인구통계
+<ul>
+<li>면적 및 인구현황</li>
+<li>25개구별 개별 인구통계 정보
+<ul>
+<li>하나의 조판 서식으로 25회 반복 작업</li>
+<li>공공 데이터 활용</li>
+</ul></li>
+</ul></li>
+</ul>
+<h3 id="bitreport-기반의-보고서">bitReport 기반의 보고서</h3>
+<h4 id="pdf-포맷">pdf 포맷</h4>
+<p><a href="서울시 인구통계.pdf" target="_blank">
+<img src="img/pdf.png" alt="정적 보고서 pdf 예제" width="20%"/>
+</a></p>
+<h4 id="html-포맷">html 포맷</h4>
+<p><a href="static_report.html" target="_blank">
+<img src="img/report_cover.png" alt="정적 보고서 html 예제" width="20%"/>
+</a></p>
+<h3 id="bitreport-기반의-보고서-생성-시연">bitReport 기반의 보고서 생성 시연</h3>
+<ul>
+<li>RStudio에서의 간단한 시연</li>
 </ul>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
